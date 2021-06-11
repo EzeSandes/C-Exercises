@@ -225,3 +225,19 @@ char* miStrpbrk(const char *donde, const char *que)
     }
     return NULL;
 }
+
+////////////////////////////
+
+void* mem_cpy(void *dest, const void *origen, size_t cantBytes)
+{
+    void *aux = dest;
+
+    for(; cantBytes > 0; cantBytes--)
+    {
+        *(char *)dest = *(char *)origen;
+        (char *)dest++;
+        (char *)origen++;
+    }
+
+    return aux;
+}

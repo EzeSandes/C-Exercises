@@ -241,3 +241,35 @@ void* mem_cpy(void *dest, const void *origen, size_t cantBytes)
 
     return aux;
 }
+
+////////////////////////////
+
+void* memmove_mio(void *donde, const void *que, size_t n)
+{
+    int     i;
+    char    *d = (char *)donde;
+
+    char    *auxBuffer;
+    char    *buffer = (char *)malloc(sizeof(char) * n);
+    if(!buffer)
+        return NULL;
+
+    auxBuffer = buffer;
+
+    for(i = 0; i < n; i++)
+    {
+        *buffer = *(char *)que;
+        (char *)que++;
+        buffer++;
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        *d = *auxBuffer;
+        auxBuffer++;
+        d++;
+    }
+
+    free(buffer);
+    return donde;
+}

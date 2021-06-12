@@ -57,20 +57,8 @@ int verTope (const tPila *p, void *d, unsigned cantBytes)
     if(*p == NULL)
         return ERROR;
 
-    //Por precedencia de operadores se debe colocar el () ya que p-> info == (*p)->info
-    memcpy(d, (*p)->info, MIN(cantBytes, (*p)->tamInfo));
+   memcpy(d, (*p)->info, MIN(cantBytes, (*p)->tamInfo));
     return TODO_OK;
-
-    //En realidad creo que pasa porque coloca **p->info porque en realidad p es doble ptr
-    //=> quera desreferenciar al puntero generico
-
-    //CREO QUE NO. AL DEBUGEAR ES LO MISMO P->INFO Y (*P)->INFO
-    //Hacerlo en papel. Acordarse que el p->info es un PTR VOID pero lo que quiero
-    //es ir a lo que apunta ese puntero, desreferenciar lo que tiene dentro.
-    // => (*p)->info == (*(*p)).info (Lo que contiene INFO)
-
-    // Si p->info se guarda en la posic 100 pero lo que contiene es la pos 30. Necesito ese num
-    // p->info == 100
 }
 
 int pilaVaciaDIN(const tPila *p)

@@ -19,7 +19,8 @@ char* miStrstr(const char *donde, const char *que);
 char* miStrpbrk(const char *donde, const char *que);
 
 void* mem_cpy(void *dest, const void *origen, size_t cantBytes);
-
+void* memmove_mio(void *donde, const void *que, size_t n);
 ///////////////////////
 
 #endif // MISTRING_H_INCLUDED
+

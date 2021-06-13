@@ -12,5 +12,9 @@ typedef struct{
 void crearPilaEst(tPila *p);
 int pilaLLenaEST(const tPila *p, unsigned cantBytes);
 int ponerEnPilaEST(tPila *p, const void *d, unsigned cantBytes);
+int verTopePilaEST(const tPila *p, void *d, unsigned cantBytes);
+void vaciarPilaEST(tPila *p);
+int sacarDePilaEST(tPila *p, void *d, unsigned cantBytes);
+
 
 #endif // PILA-EST_H_INCLUDED

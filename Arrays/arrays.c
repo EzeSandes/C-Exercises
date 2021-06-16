@@ -1,5 +1,3 @@
-#include"arrays.h"
-
 #define ESPACIOS    5
 
 #define TODO_OK     1
@@ -19,8 +17,8 @@ void mostrarArray(int *arr, int cant)
 ////////////////
 
 /*
-Desarrollar una funci髇 que inserte un elemento en un arreglo de enteros, dada
-la posici髇 de inserci髇.
+Desarrollar una funci贸n que inserte un elemento en un arreglo de enteros, dada
+la posici贸n de inserci贸n.
 */
 void mostrarArrayIndex(int *arr, int cant)
 {
@@ -117,7 +115,7 @@ int* buscoMinINT(int *arr, int cantElem)
 //////////////////////////
 
 /*
-Desarrollar una funci髇 que inserte un elemento en un arreglo de enteros, ordenado
+Desarrollar una funci贸n que inserte un elemento en un arreglo de enteros, ordenado
 en forma ascendente, de forma de no alterar el orden.
 */
 void insertarEnArrayOrdenadoINT(int *arr, int elem, int cantElem)
@@ -143,7 +141,7 @@ void insertarEnArrayOrdenadoINT(int *arr, int elem, int cantElem)
 
 ////////////////////////
 /*
-Desarrollar una funci髇 que elimine el elemento que ocupa una determinada posici髇
+Desarrollar una funci贸n que elimine el elemento que ocupa una determinada posici贸n
 de un arreglo de enteros.
 */
 int eliminarXindexINT(int *arr, int index, int *cantElem)
@@ -169,7 +167,7 @@ int eliminarXindexINT(int *arr, int index, int *cantElem)
 ////////////////////////
 
 /*
-Desarrollar una funci髇 que elimine la primera aparici髇 de un elemento determinado
+Desarrollar una funci贸n que elimine la primera aparici贸n de un elemento determinado
 de un arreglo de enteros.
 */
 int eliminarPrimAparicionINT(int *arr, int elem, int *cantElem)
@@ -191,7 +189,7 @@ int eliminarPrimAparicionINT(int *arr, int elem, int *cantElem)
 ////////////////////
 
 /*
-Desarrollar una funci髇 que elimine todas las apariciones de un determinado elemento
+Desarrollar una funci贸n que elimine todas las apariciones de un determinado elemento
 de un arreglo de enteros.
 */
 int eliminarTodaAparicionINT(int *arr, int elem, int *cantElem)

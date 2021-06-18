@@ -7,7 +7,7 @@
 
 void crearCola(tCola *p)
 {
-    p->pri = 0; // O TAM_COLA - nro
+    p->pri = 0;
     p->ult = 0;
     p->tamDisp = TAM_COLA;
 }
@@ -46,7 +46,7 @@ int ponerEnCola(tCola *p, const void *info, unsigned tamInfo)
     */
     cantByIni = MINIMO(TAM_COLA - p->ult, sizeof(unsigned));
     //Si tiene valor => debo colocar al final de la cola
-    if(cantByIni) /// SE PODRIA SACAR EL IF xq TAM - ULT siempre va a dar 1 minimo ya que ult llega 1 menos a Tam por ser un vector
+    if(cantByIni) /// SE PODRIA SACAR EL IF porque TAM - ULT siempre va a dar 1 minimo ya que ult llega 1 menos a Tam por ser un vector
         memcpy(p->cola + p->ult, &tamInfo, cantByIni); // Copie la primera parte de o todo, de nuestro unsigned
     // Debo calcular si tengo una segunda parte que copiar o no.
 

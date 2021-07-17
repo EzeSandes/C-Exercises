@@ -6,20 +6,20 @@
 
 ///////////////////////
 
-int miStrlen(const char *cad);
-char* miStrcat(char *donde, const char *que);
-char* miStrncat(char *donde, const char *que, size_t n);
-char* miStrchr(const char *donde, int que);
-char* miStrrchr(char *donde, int que);
-int miStrcmp(const char *donde, const char *que);
-char* miStrcpy(char *donde, const char *que);
-char* miStrncpy(char *donde, const char *que, size_t n);
-size_t miStrcspn(const char *donde, const char *que);
-char* miStrstr(const char *donde, const char *que);
-char* miStrpbrk(const char *donde, const char *que);
+int str_len(const char *cad);
+char* str_cat(char *donde, const char *que);
+char* str_ncat(char *donde, const char *que, size_t n);
+char* str_chr(const char *donde, int que);
+char* str_rchr(char *donde, int que);
+int str_cmp(const char *donde, const char *que);
+char* str_cpy(char *donde, const char *que);
+char* str_ncpy(char *donde, const char *que, size_t n);
+size_t str_cspn(const char *donde, const char *que);
+char* str_str(const char *donde, const char *que);
+char* str_pbrk(const char *donde, const char *que);
 
 void* mem_cpy(void *dest, const void *origen, size_t cantBytes);
-void* memmove_mio(void *donde, const void *que, size_t n);
+void* mem_move(void *donde, const void *que, size_t n);
 ///////////////////////
 
 #endif // MISTRING_H_INCLUDED

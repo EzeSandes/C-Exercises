@@ -2,7 +2,7 @@
 
 /////////////////
 
-int miStrlen(const char *cad)
+int str_len(const char *cad)
 {
     unsigned int contador = 0;
 
@@ -36,7 +36,7 @@ int str_lenRecursiva(const char *cad)
 
 /////////////////
 
-char* miStrcat(char *donde, const char *que)
+char* str_cat(char *donde, const char *que)
 {
     char *ptrTemp = donde;
 
@@ -57,7 +57,7 @@ char* miStrcat(char *donde, const char *que)
 
 /////////////////////////
 
-char* miStrncat(char *donde, const char *que, size_t n)
+char* str_ncat(char *donde, const char *que, size_t n)
 {
     char *ptrTemp = donde;
 
@@ -79,7 +79,7 @@ char* miStrncat(char *donde, const char *que, size_t n)
 
 /////////////////////////
 
-char* miStrchr(const char *donde, int que)
+char* str_chr(const char *donde, int que)
 {
 //    char *ptrAux = NULL;
 
@@ -90,7 +90,7 @@ char* miStrchr(const char *donde, int que)
 }
 
 /////////////////////////
-char* miStrrchr(char *donde, int que)
+char* str_rchr(char *donde, int que)
 {
     char *ptrTemp = NULL;
     while(*donde)
@@ -106,7 +106,7 @@ char* miStrrchr(char *donde, int que)
 
 /////////////////////////
 
-int miStrcmp(const char *donde, const char *que)
+int str_cmp(const char *donde, const char *que)
 {
     while(*donde && *donde == *que)
     {
@@ -120,7 +120,7 @@ int miStrcmp(const char *donde, const char *que)
 
 /////////////////////////
 
-char* miStrcpy(char *donde, const char *que)
+char* str_cpy(char *donde, const char *que)
 {
     char *ptrTemp = donde;
 
@@ -139,7 +139,7 @@ char* miStrcpy(char *donde, const char *que)
 
 ////////////////////////////////
 
-char* miStrncpy(char *donde, const char *que, size_t n)
+char* str_ncpy(char *donde, const char *que, size_t n)
 {
     char *ptrTemp = donde;
 
@@ -158,7 +158,7 @@ char* miStrncpy(char *donde, const char *que, size_t n)
 
 ////////////////////////////////
 
-size_t miStrcspn(const char *donde, const char *que)
+size_t str_cspn(const char *donde, const char *que)
 {
     size_t contador = 0;
     char *ptrQue;
@@ -180,7 +180,7 @@ size_t miStrcspn(const char *donde, const char *que)
 }
 
 //////////////////////////////
-char* miStrstr(const char *donde, const char *que)
+char* str_str(const char *donde, const char *que)
 {
     char *d;
     char *q;
@@ -207,7 +207,7 @@ char* miStrstr(const char *donde, const char *que)
 
 ////////////////////////////
 
-char* miStrpbrk(const char *donde, const char *que)
+char* str_pbrk(const char *donde, const char *que)
 {
     char *ptrQue;
 
@@ -244,7 +244,7 @@ void* mem_cpy(void *dest, const void *origen, size_t cantBytes)
 
 ////////////////////////////
 
-void* memmove_mio(void *donde, const void *que, size_t n)
+void* mem_move(void *donde, const void *que, size_t n)
 {
     int     i;
     char    *d = (char *)donde;

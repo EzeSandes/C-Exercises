@@ -1,4 +1,3 @@
-#include"Lista.h"
 #include<string.h>
 
 #define     ERROR   0

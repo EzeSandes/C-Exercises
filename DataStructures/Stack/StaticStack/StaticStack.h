@@ -1,7 +1,7 @@
 #ifndef PILA-EST_H_INCLUDED
 #define PILA-EST_H_INCLUDED
 
-#define TAM_PILA    200
+#define TAM_PILA    200 //Size
 
 typedef struct{
     char        pila[TAM_PILA];

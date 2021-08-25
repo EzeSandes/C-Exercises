@@ -205,25 +205,25 @@ void displayLowerTriangle(int mat[][COL], int row, int col)
                **
                 *
 */
-void mostrarTriangCentroDER(int mat[][COL], int fila, int col)
+void mostrarTriangCentroDER(int mat[][COL], int row, int col)
 {
     int i,
         j;
 
-    for(i = 0; i < fila / 2; i++)
+    for(i = 0; i < row / 2; i++)
     {
-        printf("%*s", ESPACIOS * ((col - 1) - i), "");
+        printf("%*s", SPACES * ((col - 1) - i), "");
         for(j = col - 1 - i; j < col; j++)
-            printf("%*.02d", ESPACIOS, mat[i][j]);
+            printf("%*.02d", SPACES, mat[i][j]);
 
         printf("\n");
     }
 
-    for(; i < fila; i++)
+    for(; i < row; i++)
     {
-        printf("%*s", ESPACIOS * i, "");
+        printf("%*s", SPACES * i, "");
         for(j = i; j < col; j++)
-            printf("%*.02d", ESPACIOS, mat[i][j]);
+            printf("%*.02d", SPACES, mat[i][j]);
 
         printf("\n");
     }

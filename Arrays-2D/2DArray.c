@@ -193,3 +193,41 @@ void displayLowerTriangle(int mat[][COL], int row, int col)
 }
 
 /*************************/
+
+// BUG: Only works with square matrixs.
+/*
+  FORM:
+                *
+               **
+              ***
+            *****
+              ***
+               **
+                *
+*/
+void mostrarTriangCentroDER(int mat[][COL], int fila, int col)
+{
+    int i,
+        j;
+
+    for(i = 0; i < fila / 2; i++)
+    {
+        printf("%*s", ESPACIOS * ((col - 1) - i), "");
+        for(j = col - 1 - i; j < col; j++)
+            printf("%*.02d", ESPACIOS, mat[i][j]);
+
+        printf("\n");
+    }
+
+    for(; i < fila; i++)
+    {
+        printf("%*s", ESPACIOS * i, "");
+        for(j = i; j < col; j++)
+            printf("%*.02d", ESPACIOS, mat[i][j]);
+
+        printf("\n");
+    }
+}
+
+/*************************/
+/*************************/

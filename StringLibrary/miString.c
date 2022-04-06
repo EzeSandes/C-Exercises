@@ -89,6 +89,21 @@ char* str_chr(const char *donde, int que)
     return *donde == que ?   (char *)donde : NULL;
 }
 
+// Opcion_2
+char* str_chr(const char *cad, int c)
+{
+    while(*cad)
+    {
+        if(*cad == c)
+            return (char*)cad;
+
+        cad++;
+    }
+
+    return *cad == '\0' ? (char*)cad : NULL;
+}
+
+
 /////////////////////////
 char* str_rchr(char *donde, int que)
 {

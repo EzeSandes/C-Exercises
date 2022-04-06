@@ -56,6 +56,35 @@ int insertarArrayINT(int *arr, int elem, int index, int cant)
     return TODO_OK;
 }
 
+// Otra version al que si le insertamos en el ultimo lugar y el array no tiene suficiente espacio, ese ultimo
+// elemento, lo pierdo.
+int insertarEnVector_INT(int *vec, int dato, int pos, int *cantElem, int tam)
+{
+    int *pVec;
+
+    // Si no hay lugar, continua pero el ultimo valor lo perdere.
+    if(pos <= 0 || pos > *cantElem + 1)
+        return ERROR;
+
+    if(pos == tam && pos == *cantElem)
+    {
+        vec += pos - 1;
+        *vec = dato;
+        return TODO_OK;
+    }
+
+    pVec = vec + *cantElem;
+    while(vec + pos - 1 < pVec)
+    {
+        *pVec = *(pVec - 1);
+        pVec--;
+    }
+
+    *pVec = dato;
+    (*cantElem)++;
+
+    return TODO_OK;
+}
 /////////////////
 
 void ordenarArrayINT(int *arr, int cantElem)
@@ -192,6 +221,10 @@ int eliminarPrimAparicionINT(int *arr, int elem, int *cantElem)
 Desarrollar una función que elimine todas las apariciones de un determinado elemento
 de un arreglo de enteros.
 */
+
+//1ra Opcion: Ineficiente ya que estoy asignando en todo momento sin importar si el elemento se encuentra en el array o no.
+//            Si es de 10 elementos a la performance no afecta pero si cuento con miles o incluso millones, no seria correcto.
+
 int eliminarTodaAparicionINT(int *arr, int elem, int *cantElem)
 {
     int *ptrEscritura = arr;
@@ -213,6 +246,46 @@ int eliminarTodaAparicionINT(int *arr, int elem, int *cantElem)
 
         *ptrEscritura = *arr;
         cantElemTemp--;
+    }
+
+    return TODO_OK;
+}
+
+// Segunda Opcion mas optima en mi opinion. Solo empiezo a mover elementos cuando se que se encuentra el dato que deseo eliminar
+int eliminarTodasAparicionesDeVector_int_2(int *vec, int dato, int *cantElem)
+{
+    int     *pFin = vec + *cantElem,
+             *pLectura,
+             *pEscritura;
+
+    while(vec < pFin)
+    {
+        while(*vec != dato && vec < pFin)
+            vec++;
+
+        if(vec == pFin)
+            return ERROR; // Significa que se paso de rango permitido y no lo encontro
+
+        (*cantElem)--;
+        pLectura = vec + 1; // Si encontro  => apunto al siguiente.
+        pEscritura = vec;
+
+        while(pLectura < pFin)
+        {
+            if(*pLectura == dato)
+            {
+                (*cantElem)--;
+            }
+            else
+            {
+                *pEscritura = *pLectura;
+                pEscritura++;
+            }
+
+            pLectura++;
+        }
+
+        vec = pLectura;
     }
 
     return TODO_OK;

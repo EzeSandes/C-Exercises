@@ -222,6 +222,7 @@ char* str_str(const char *donde, const char *que)
 
 ////////////////////////////
 
+
 char* str_pbrk(const char *donde, const char *que)
 {
     char *ptrQue;
@@ -241,6 +242,34 @@ char* str_pbrk(const char *donde, const char *que)
     return NULL;
 }
 
+/* Opcion_2: Menos eficiente pero funciona igualmente.
+
+char* strpbrk_mio(const char *donde, const char *que)
+{
+    char *pAux = (char *)donde,
+            *pDonde;
+
+    while(*pAux)
+        pAux++;
+
+    while(*que)
+    {
+        pDonde = (char *)donde;
+
+        while(*que != *pDonde && *pDonde)
+            pDonde++;
+
+        // Ingresa => Significa que encontro uno igual.
+        if(*pDonde && (int)(pDonde - pAux) < 0)
+            pAux = pDonde;
+
+        que++;
+    }
+
+    return *pAux ? pAux : NULL;
+}
+
+*/
 ////////////////////////////
 
 void* mem_cpy(void *dest, const void *origen, size_t cantBytes)

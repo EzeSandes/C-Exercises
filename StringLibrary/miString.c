@@ -1,5 +1,12 @@
 #include "miString.h"
 
+#define ES_MINUSCULA(x)     ((x) >= 'a' && (x) <= 'z')
+#define ES_MAYUSCULA(x)     ((x) >= 'A' && (x) <= 'Z')
+#define ES_LETRA(x)         (ES_MINUSCULA(x) || ES_MAYUSCULA(x))
+
+#define A_MINUSC(x)    ((x) >= 'a' && (x) <= 'z' ? (x) : ((x) + ('a' - 'A')))
+#define A_MAYUSC(x)    ((x) >= 'A' && (x) <= 'Z' ? (x) : ((x) - ('a' - 'A')))
+
 /////////////////
 
 int str_len(const char *cad)
@@ -156,19 +163,27 @@ char* str_cpy(char *donde, const char *que)
 
 char* str_ncpy(char *donde, const char *que, size_t n)
 {
-    char *ptrTemp = donde;
+    char *pInicio = donde;
 
     while(*que && n)
     {
         *donde = *que;
-        n--;
-        donde++;
         que++;
+        donde++;
+        n--;
     }
 
-    *donde = '\0';
+    if(!n)
+        *donde = '\0';
 
-    return ptrTemp;
+    while(n && *donde)
+    {
+        *donde = '\0';
+        donde++;
+        n--;
+    }
+
+    return pInicio;
 }
 
 ////////////////////////////////
@@ -270,6 +285,40 @@ char* strpbrk_mio(const char *donde, const char *que)
 }
 
 */
+////////////////////////////
+
+char* str_lwr(char *cad)
+{
+    char *pInicio = cad;
+
+    while(*cad)
+    {
+        if(ES_LETRA(*cad))
+            *cad = A_MINUSC(*cad);
+
+        cad++;
+    }
+
+    return pInicio;
+}
+
+//////////////////////////////
+
+char* str_upr(char *cad)
+{
+    char *pInicio = cad;
+
+    while(*cad)
+    {
+        if(ES_LETRA(*cad))
+            *cad = A_MAYUSC(*cad);
+
+        cad++;
+    }
+
+    return pInicio;
+}
+
 ////////////////////////////
 
 void* mem_cpy(void *dest, const void *origen, size_t cantBytes)

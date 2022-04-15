@@ -90,4 +90,28 @@ int inSituMatrixTransposition(int mat[][COL], int rows, int col)
 }
 
 /*************************/
+
+int productOfMatrix(int mat1[][COL], int mat2[][COL], int matResult[][COL],
+                      int rowsMat1, int columnsMat1, int rowsMat2, int columnsMat2)
+{
+    int i, 
+        j, 
+        k;
+
+    if(columnsMat1 != rowsMat2)
+        return FALSE;
+
+    for(k = 0; k < columnsMat2; k++)
+    {
+        for(i = 0; i < rowsMat1; i++)
+        {
+            matResult[i][k] = 0;
+            for(j = 0; j < rowsMat2; j++)
+                matResult[i][k] += (mat1[i][j] * mat2[j][k]);
+        }
+    }
+
+    return TRUE;
+}
+
 /*************************/

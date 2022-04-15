@@ -21,6 +21,21 @@ int sumAboveMainDiagonal(int mat[][COL], int rows, int col)
     return sum;
 }
 /*************************/
+
+int isDiagonalMatrix(int mat[][COL], int rows, int col)
+{
+    int i, j;
+
+    for(i = 0; i < rows; i++)
+    {
+        for(j = i + 1; j < col; j++)
+            if(mat[i][j] || mat[j][i])
+                return FALSE;
+    }
+
+    return TRUE;
+}
+
 /*************************/
 
 int isIdentityMatrix(int mat[][COL], int rows, int col)

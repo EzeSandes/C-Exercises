@@ -321,6 +321,22 @@ char* str_upr(char *cad)
 
 ////////////////////////////
 
+char* str_cpy_mine(char *where, const char *since, const char *until)
+{
+    char *pInit = where;
+
+    while(since <= until)
+    {
+        *where = *since;
+        where++;
+        since++;
+    }
+
+    return pInit;
+}
+
+////////////////////////////
+
 void* mem_cpy(void *dest, const void *origen, size_t cantBytes)
 {
     void *aux = dest;

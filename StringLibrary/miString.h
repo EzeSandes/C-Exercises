@@ -14,6 +14,7 @@ char* str_rchr(char *donde, int que);
 int str_cmp(const char *donde, const char *que);
 char* str_cpy(char *donde, const char *que);
 char* str_ncpy(char *donde, const char *que, size_t n);
+char* str_cpy_mine(char *where, const char *since, const char *until);
 size_t str_cspn(const char *donde, const char *que);
 char* str_str(const char *donde, const char *que);
 char* str_pbrk(const char *donde, const char *que);

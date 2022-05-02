@@ -1,4 +1,4 @@
-Exercise
+# Exercise
 
 Two binary files are available: <“employees”> and <“students”>.
 Each record of the first file contains the fields:

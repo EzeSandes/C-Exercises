@@ -29,7 +29,7 @@ int main()
             break;
 
         case 1:
-            optionShowTestFiles();
+            optionCreateTestFiles();
             break;
 
         case 2:

@@ -337,18 +337,19 @@ char* str_cpy_mine(char *where, const char *since, const char *until)
 
 ////////////////////////////
 
-void* mem_cpy(void *dest, const void *origen, size_t cantBytes)
+void mem_cpy(void *destino, const void *origen, size_t cantBytes)
 {
-    void *aux = dest;
+    int i;
+    destino = (char *)destino + (cantBytes - 1);
+    origen = (char *)origen + (cantBytes - 1);
 
-    for(; cantBytes > 0; cantBytes--)
+    for(i = 0; i < cantBytes; i++)
     {
-        *(char *)dest = *(char *)origen;
-        (char *)dest++;
-        (char *)origen++;
-    }
+        *(char *)destino = *(char *)origen;
 
-    return aux;
+        (char *)destino--;
+        (char *)origen--;
+    }
 }
 
 ////////////////////////////

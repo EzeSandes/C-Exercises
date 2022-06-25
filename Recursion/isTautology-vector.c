@@ -1,3 +1,30 @@
+/*
+    - Given an array of elements, check if their elements are all "true"(Condition of "true" given by the developer).
+*/
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
 int fcFalse_int(const void *d);
 
 /////////////////////////////////////////////// MAIN.C

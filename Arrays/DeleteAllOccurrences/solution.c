@@ -1,6 +1,6 @@
 int removeAllOcurrences_int(int *vec, int data, int *numOfElem)
 {
-    int     *pEnd = vec + *cantElem,
+    int     *pEnd = vec + *numOfElem,
              *pRead,
              *pWrite;
 
@@ -14,7 +14,7 @@ int removeAllOcurrences_int(int *vec, int data, int *numOfElem)
         if(vec == pEnd)
             return numItemsDeleted; // It passed the allowed range y it did not find it => return zero
 
-        (*cantElem)--;
+        (*numOfElem)--;
         pRead = vec + 1; // if found it  => point to the next one.
         pWrite = vec;
 
@@ -22,7 +22,7 @@ int removeAllOcurrences_int(int *vec, int data, int *numOfElem)
         {
             if(*pRead == data)
             {
-                (*cantElem)--;
+                (*numOfElem)--;
                 numItemsDeleted++;
             }
             else
